@@ -1,0 +1,13 @@
+FROM basex/basexhttp:latest
+
+# Copy RESTXQ webapp endpoints
+COPY webapp/ /srv/basex/webapp/
+COPY repo/ /srv/basex/repo/
+
+# Copy seed scripts and corpus data (if available)
+COPY seed/ /srv/basex/seed/
+
+# Expose the BaseX HTTP port
+EXPOSE 8080
+
+CMD ["basexhttp"]
