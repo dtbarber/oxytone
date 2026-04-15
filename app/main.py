@@ -5,7 +5,10 @@ from genanki import BASIC_MODEL, Deck, Note
 from httpx import AsyncClient
 from typing import Annotated
 
-basex = AsyncClient(base_url="http://localhost:8080")
+import os
+
+basex = AsyncClient(base_url=os.environ.get("BASEX_URL", "http://localhost:8080"))
+
 app = FastAPI()
 
 
