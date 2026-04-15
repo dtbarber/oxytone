@@ -4,6 +4,14 @@ from fastapi.responses import FileResponse
 from genanki import BASIC_MODEL, Deck, Note
 from httpx import AsyncClient
 from typing import Annotated
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://your-sveltekit-app.onrender.com"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 import os
 
